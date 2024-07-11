@@ -1,0 +1,559 @@
+{
+	"info": {
+		"_postman_id": "d3813cef-9c46-43ae-9662-b76b34b7632b",
+		"name": "Trello API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27414440",
+		"_collection_link": "https://grey-comet-8085.postman.co/workspace/c57501b7-974a-47f8-9ae0-737ffd231185/collection/27414440-d3813cef-9c46-43ae-9662-b76b34b7632b?action=share&source=collection_link&creator=27414440"
+	},
+	"item": [
+		{
+			"name": "Get all boards",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/1/members/me/boards?key={{Trello_API_Key}}&token={{Trello_API_Token}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"1",
+						"members",
+						"me",
+						"boards"
+					],
+					"query": [
+						{
+							"key": "key",
+							"value": "{{Trello_API_Key}}"
+						},
+						{
+							"key": "token",
+							"value": "{{Trello_API_Token}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create board",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/1/boards/?name={{boardName}}&key={{Trello_API_Key}}&token={{Trello_API_Token}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"1",
+						"boards",
+						""
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "{{boardName}}"
+						},
+						{
+							"key": "key",
+							"value": "{{Trello_API_Key}}"
+						},
+						{
+							"key": "token",
+							"value": "{{Trello_API_Token}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get a board",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/1//boards/:id?key={{Trello_API_Key}}&token={{Trello_API_Token}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"1",
+						"",
+						"boards",
+						":id"
+					],
+					"query": [
+						{
+							"key": "key",
+							"value": "{{Trello_API_Key}}"
+						},
+						{
+							"key": "token",
+							"value": "{{Trello_API_Token}}"
+						}
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "6561c8baaec894b24d3dd9b0",
+							"type": "string"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get a board lists",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/1/boards/:id/lists?key={{Trello_API_Key}}&token={{Trello_API_Token}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"1",
+						"boards",
+						":id",
+						"lists"
+					],
+					"query": [
+						{
+							"key": "key",
+							"value": "{{Trello_API_Key}}"
+						},
+						{
+							"key": "token",
+							"value": "{{Trello_API_Token}}"
+						}
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "6561c8baaec894b24d3dd9b0",
+							"type": "string"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all cards on a board",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/1/boards/:id/cards?key={{Trello_API_Key}}&token={{Trello_API_Token}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"1",
+						"boards",
+						":id",
+						"cards"
+					],
+					"query": [
+						{
+							"key": "key",
+							"value": "{{Trello_API_Key}}"
+						},
+						{
+							"key": "token",
+							"value": "{{Trello_API_Token}}"
+						}
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "6561c8baaec894b24d3dd9b0",
+							"type": "string"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create TODO list",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "{{baseUrl}}/1/boards/:id/lists?name=Todo&key={{Trello_API_Key}}&token={{Trello_API_Token}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"1",
+						"boards",
+						":id",
+						"lists"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Todo"
+						},
+						{
+							"key": "key",
+							"value": "{{Trello_API_Key}}"
+						},
+						{
+							"key": "token",
+							"value": "{{Trello_API_Token}}"
+						}
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "6561c8baaec894b24d3dd9b0"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create DONE list",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "{{baseUrl}}/1/boards/:id/lists?name=Done&key={{Trello_API_Key}}&token={{Trello_API_Token}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"1",
+						"boards",
+						":id",
+						"lists"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Done"
+						},
+						{
+							"key": "key",
+							"value": "{{Trello_API_Key}}"
+						},
+						{
+							"key": "token",
+							"value": "{{Trello_API_Token}}"
+						}
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "6561c8baaec894b24d3dd9b0"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all Lists on a Board",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "{{baseUrl}}/1/boards/:id/lists?key={{Trello_API_Key}}&token={{Trello_API_Token}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"1",
+						"boards",
+						":id",
+						"lists"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Done",
+							"disabled": true
+						},
+						{
+							"key": "key",
+							"value": "{{Trello_API_Key}}"
+						},
+						{
+							"key": "token",
+							"value": "{{Trello_API_Token}}"
+						}
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "6561c8baaec894b24d3dd9b0"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create a card",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "{{baseUrl}}/1/cards/?idList=6568e61f8a9377fc046d3ab4&key={{Trello_API_Key}}&token={{Trello_API_Token}}&name=Another test card",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"1",
+						"cards",
+						""
+					],
+					"query": [
+						{
+							"key": "idList",
+							"value": "6568e61f8a9377fc046d3ab4"
+						},
+						{
+							"key": "key",
+							"value": "{{Trello_API_Key}}"
+						},
+						{
+							"key": "token",
+							"value": "{{Trello_API_Token}}"
+						},
+						{
+							"key": "name",
+							"value": "Another test card"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get a card",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "{{baseUrl}}/1/cards/:id?key={{Trello_API_Key}}&token={{Trello_API_Token}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"1",
+						"cards",
+						":id"
+					],
+					"query": [
+						{
+							"key": "key",
+							"value": "{{Trello_API_Key}}"
+						},
+						{
+							"key": "token",
+							"value": "{{Trello_API_Token}}"
+						}
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "6568ec38071afe6a551adfa4"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Move card from TODO to DONE list",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "{{baseUrl}}/1/cards/:id?key={{Trello_API_Key}}&token={{Trello_API_Token}}&idList=6568e748dbafe207a4b38f39",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"1",
+						"cards",
+						":id"
+					],
+					"query": [
+						{
+							"key": "key",
+							"value": "{{Trello_API_Key}}"
+						},
+						{
+							"key": "token",
+							"value": "{{Trello_API_Token}}"
+						},
+						{
+							"key": "idList",
+							"value": "6568e748dbafe207a4b38f39"
+						}
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "6568ec38071afe6a551adfa4"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete a card",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/1/cards/:id?key={{Trello_API_Key}}&token={{Trello_API_Token}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"1",
+						"cards",
+						":id"
+					],
+					"query": [
+						{
+							"key": "key",
+							"value": "{{Trello_API_Key}}"
+						},
+						{
+							"key": "token",
+							"value": "{{Trello_API_Token}}"
+						}
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "6568eb11c7042f49f89085f7"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete a board",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/1/boards/:id?key={{Trello_API_Key}}&token={{Trello_API_Token}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"1",
+						"boards",
+						":id"
+					],
+					"query": [
+						{
+							"key": "key",
+							"value": "{{Trello_API_Key}}"
+						},
+						{
+							"key": "token",
+							"value": "{{Trello_API_Token}}"
+						}
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "656866777fad617753c7f2b6"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "Trello_API_Key",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "Trello_API_Token",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "baseUrl",
+			"value": "https://api.trello.com",
+			"type": "string"
+		},
+		{
+			"key": "boardName",
+			"value": "",
+			"type": "string"
+		}
+	]
+}
